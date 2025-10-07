@@ -331,6 +331,19 @@
                     <span id="contactOk" class="ms-2 text-success d-none">Mensaje enviado (simulación)</span>
                   </div>
                 </form>
+                <hr class="my-4">
+                <h4>Registro de cliente</h4>
+                <form onsubmit="event.preventDefault(); registrarse();">
+                  <div class="mb-3">
+                    <label for="emailRegister" class="form-label">Correo electrónico</label>
+                    <input type="email" id="emailRegister" class="form-control" placeholder="ejemplo@sandwish.cl" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="passRegister" class="form-label">Contraseña</label>
+                    <input type="password" id="passRegister" class="form-control" placeholder="••••••••" required>
+                  </div>
+                  <button type="submit" class="btn btn-danger">Registrarse</button>
+                </form>
               </div>
             </div>
           </div><!-- /tab-content -->
@@ -516,5 +529,24 @@
     // Estado inicial
     renderCart();
   </script>
+  <script>
+  function registrarse() {
+    let email = document.getElementById("emailRegister").value;
+    let pass = document.getElementById("passRegister").value;
+
+    if (email == "cliente1@sandwish.cl" && pass == "clave2025") {
+      location.href = "carta.html";
+    }
+
+    if (email == "cliente2@sandwish.cl") {
+      alert("El correo ya está en uso");
+    }
+
+    if (email == "nuevo@sandwish.cl" && pass == "abc") {
+      alert("La contraseña no cumple requisitos");
+    }
+  }
+  </script>
+
 </body>
 </html>
